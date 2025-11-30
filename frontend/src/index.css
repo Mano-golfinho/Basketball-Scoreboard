@@ -1,0 +1,123 @@
+:root {
+  --bg-color: #050505;
+  --text-color: #ffffff;
+  
+  /* Ice Theme */
+  --ice-primary: #00f2ff;
+  --ice-secondary: #0088ff;
+  --ice-glow: 0 0 15px rgba(0, 242, 255, 0.6);
+  --ice-bg: rgba(0, 242, 255, 0.05);
+  --ice-border: rgba(0, 242, 255, 0.3);
+
+  /* Fire Theme */
+  --fire-primary: #ff3300;
+  --fire-secondary: #ffaa00;
+  --fire-glow: 0 0 15px rgba(255, 51, 0, 0.6);
+  --fire-bg: rgba(255, 51, 0, 0.05);
+  --fire-border: rgba(255, 51, 0, 0.3);
+
+  /* Neutral */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  
+  --font-display: 'Orbitron', sans-serif;
+  --font-ui: 'Rajdhani', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-ui);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(0, 242, 255, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255, 51, 0, 0.05) 0%, transparent 40%);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: var(--font-ui);
+  transition: all 0.2s ease;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #111;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.ice-theme {
+  --theme-primary: var(--ice-primary);
+  --theme-glow: var(--ice-glow);
+  --theme-bg: var(--ice-bg);
+  --theme-border: var(--ice-border);
+}
+
+.fire-theme {
+  --theme-primary: var(--fire-primary);
+  --theme-glow: var(--fire-glow);
+  --theme-bg: var(--fire-bg);
+  --theme-border: var(--fire-border);
+}
+
+.glow-text {
+  text-shadow: var(--theme-glow);
+}
+
+.btn-control {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.btn-control:hover {
+  background: var(--theme-primary);
+  color: black;
+  box-shadow: var(--theme-glow);
+  border-color: var(--theme-primary);
+}
+
+input {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--glass-border);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: var(--font-ui);
+  font-size: 1rem;
+}
+
+input:focus {
+  border-color: var(--theme-primary);
+  outline: none;
+  box-shadow: 0 0 10px var(--theme-bg);
+}
