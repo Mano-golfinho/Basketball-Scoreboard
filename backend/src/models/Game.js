@@ -2,12 +2,14 @@ const mongoose = require('mongoose');
 
 const GameSchema = new mongoose.Schema({
     leftTeam: {
-        type: String,
-        required: true
+        name: { type: String, required: true },
+        score: { type: Number, required: true },
+        fouls: { type: Number, default: 0 }
     },
     rightTeam: {
-        type: String,
-        required: true
+        name: { type: String, required: true },
+        score: { type: Number, required: true },
+        fouls: { type: Number, default: 0 }
     },
     winner: {
         type: String,
